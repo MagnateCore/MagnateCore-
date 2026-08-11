@@ -1,0 +1,12 @@
+{
+  "name": "magnate-core",
+  "version": "1.0.0",
+  "description": "Motor principal de automatización y webhooks para Magnate Core",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
