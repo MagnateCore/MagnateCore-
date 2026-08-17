@@ -31,7 +31,6 @@ app.post('/webhook', async (req, res) => {
         replyText = 'Soporte técnico activo. Contacta a un administrador.';
       }
 
-      // 1. Enviar respuesta directa al usuario
       await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -41,7 +40,6 @@ app.post('/webhook', async (req, res) => {
         })
       });
 
-      // 2. Transmitir evento al Canal de Logs
       const logMessage = `LOG MAGNATE CORE:\nUsuario ID: ${chatId}\nComando: ${text}`;
       await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
         method: 'POST',
