@@ -33,11 +33,13 @@ function sendTelegramMessage(chatId, text) {
   req.end();
 }
 
+// Endpoint de Keep-Alive / Healthcheck
 app.get('/', (req, res) => {
   res.status(200).send('Magnate Core Router activo y escuchando.');
 });
 
 app.post('/webhook', (req, res) => {
+  // Responder inmediatamente 200 OK a Telegram para evitar timeouts
   res.status(200).send('OK');
 
   try {
